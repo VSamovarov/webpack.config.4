@@ -1,0 +1,19 @@
+@function _assign-inputs-parametr(
+  $parametr,
+  $pseudo: null,
+  $inputs: $_text-inputs-list
+) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $parametr: unquote($parametr);
+    $input: $input+'['+$parametr+']';
+    $list: append($list, $input, comma);
+  }
+  @return $list;
+}
+
+//[type][parametr]
+$all-text-inputs-readonly: _assign-inputs-parametr('readonly');

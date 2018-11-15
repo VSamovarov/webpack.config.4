@@ -1,0 +1,83 @@
+/**
+ * Используем flexiblegs-scss
+ * 
+ * Этот миксин переопределяет letter-spacing и font-size
+ * для wrap элемента и его потомков, 
+ * попровляем это, добовляя параметр font-size для row
+ * и letter-spacing: inherit; к классу, который используем для wrap
+*/
+
+// body { font-size: 1rem !default; }
+$gutter-width : 25;
+.rows, [class^="rows-"], [class*=" rows-"] {
+  letter-spacing: inherit; 
+  @include wrap;
+  @include wrap("flexbox");
+  @include wrap("gutter",$gutter-width);
+  align-items: stretch;
+
+  &>*{
+    font-size: 1rem;
+    @include col;
+    margin-bottom: $baseline;
+  }
+}
+
+.rows-2-2-1 {
+  &>*{
+    @include col(12,12);
+    @include breakpoint($big-display) {
+      @include col(6,12);
+    }
+    @include breakpoint($medium-display) {
+      @include col(6,12);
+    }
+  }
+}
+
+.rows-3-2-1 {
+  &>*{
+    @include col(12,12);
+    @include breakpoint($big-display) {
+      @include col(4,12);
+    }
+    @include breakpoint($medium-display) {
+      @include col(6,12);
+    }
+  }
+}
+.rows-4-2-1 {
+  &>*{
+    @include col(12,12);
+    @include breakpoint($big-display) {
+      @include col(4,12);
+    }
+    @include breakpoint($medium-display) {
+      @include col(6,12);
+    }
+  }
+}
+.rows-4-4-2 {
+  &>*{
+    @include col(6,12);
+    @include breakpoint($big-display) {
+      @include col(3,12);
+    }
+    @include breakpoint($medium-display) {
+      @include col(3,12);
+    }
+  }
+}
+
+
+.rows-6-6-2 {
+  &>*{
+    @include col(6,12);
+    @include breakpoint($big-display) {
+      @include col(2,12);
+    }
+    @include breakpoint($medium-display) {
+      @include col(2,12);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+//breakpoints
+//@include breakpoint($big-display) {}
+//Девайсы
+/* Large desktops and laptops @media (min-width: 1200px)*/
+$desktops: 75rem;
+/* Landscape tablets and medium desktops @media (min-width: 992px) and (max-width: 1199px)*/
+$tablets: 62rem 74.94rem;
+/* Portrait tablets and small desktops @media (min-width: 768px) and (max-width: 991px) */
+$phones-landscape: 48rem 61.94rem;
+/* Landscape phones and portrait tablets (max-width: 767px) */
+$phones: max-width 47.94rem;
+/* Portrait phones and smaller (max-width: 480px)*/
+$phones-small: max-width 30rem;
+/* Iphone 5 (max-width: 320px)*/
+$iphone_5: max-width 20rem;
+
+//Основные верстка
+$big-display: 62rem;
+$big-and-medium-display: 35rem;
+$medium-display: 35rem 61.94rem;
+$medium-and-samll-display: max-width 61.94rem;
+$small-display: max-width 34.94rem;

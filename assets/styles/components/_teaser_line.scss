@@ -1,0 +1,19 @@
+/*
+Картинка и надписи в одну линию
+*/
+
+@mixin teaser_line () {
+  @include clearfix;
+  .thumbnail {
+    display: block;
+    float: left;
+    width: 10em;
+  }
+  .content, .footer {
+    padding-left: 14em;
+  }
+}
+
+.teaser.teaser_line, .teaser_line .teaser {
+  @include teaser_line ();
+}

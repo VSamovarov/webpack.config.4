@@ -1,0 +1,23 @@
+.list-posts {
+  @include wrap;
+  @include wrap("flexbox");
+  @include wrap("gutter",$gutter-width);
+  align-items: stretch;
+  letter-spacing: inherit; //!!Важно!
+  & > * {
+    font-size: 1rem;
+  }
+  & > .teaser  {
+    margin-bottom: $baseline;
+    @include col;
+    @include col(12,12);
+    @include teaser_line();
+    // @include breakpoint($big-display) {
+    //   @include col(4,12);
+      
+    // }
+    // @include breakpoint($medium-display) {
+    //   @include col(6,12);
+    // }
+  }
+}

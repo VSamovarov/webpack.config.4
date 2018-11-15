@@ -1,0 +1,31 @@
+$logoRatio: 300/52; //Отношение сторон(w/h)
+$logoWidth: 9rem; //увеличение логотипа
+
+.site-branding {
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;  
+  &__weapper {
+    padding: 0 1rem;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    // position: absolute;
+    // top:50%;
+    // margin-bottom: -$logoWidth/$logoRatio;
+  }
+  &__logo {
+		width: $logoWidth;
+		height:$logoWidth/$logoRatio;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__name{
+    display: block;
+    font-size: .73rem;
+    text-align: left;
+    margin-top: .2rem;
+  }
+}

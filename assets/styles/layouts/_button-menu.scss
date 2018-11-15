@@ -1,0 +1,43 @@
+#button-menu {
+  position: relative;
+  @include breakpoint($big-display) { 
+    display: none;
+  }
+  .menu-button-icon {
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .menu-button-icon:hover {
+    background-color: adjust-color($brand-color,$hue:-3);
+  }
+  .menu-button-icon:after {
+    content: '\f0c9'; 
+    display: block;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;
+    padding: 0 .4em;
+    //line-height: 1.9em;
+  }
+}
+
+body.openMenu {
+  #button-menu {
+    .menu-button-icon {
+      right: -.2rem;
+    }
+    .menu-button-icon:after {
+      content: '\e803'; 
+      //content: '\e806'; 
+    }
+  }
+}

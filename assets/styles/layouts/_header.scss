@@ -1,0 +1,16 @@
+.header {
+  & * {
+    box-sizing: border-box;
+  }
+  background-color: $brand-color;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    &__site-branding {
+      text-align: left;
+    }
+  }
+  @include breakpoint($big-display) {
+    margin-top: 1rem;
+  }
+}

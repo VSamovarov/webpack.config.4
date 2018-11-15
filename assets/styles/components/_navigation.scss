@@ -1,0 +1,17 @@
+.navigation {
+  .page-numbers {
+    text-decoration: none;
+    padding: .8rem 1rem;
+    line-height: 1;
+    background: $grey-white;
+    color: $accent-color-1;
+    @extend .s1;
+    @extend .think;
+  }
+  .page-numbers:hover,.current {
+    background: $accent-color-1;
+    color: $grey-white;
+  }
+  //.next {}
+  //.prev {}
+}

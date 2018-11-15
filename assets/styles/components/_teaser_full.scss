@@ -1,0 +1,15 @@
+/*
+Квадратный тизер, со всеми надписями
+*/
+
+@mixin teaser_full() {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .content {
+    flex-grow: 1;
+  }
+}
+.teaser_full.teaser, .teaser_full>.teaser {
+  @include teaser_full();
+}

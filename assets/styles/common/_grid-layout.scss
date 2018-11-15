@@ -1,0 +1,41 @@
+$gutter-layout: 50px;
+.columns.grid-layout {
+  @include breakpoint($big-display) {
+    &, .grid-layout__inner, .s, .s__inner {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+      box-sizing: border-box;
+    }
+    @include pages-padding();
+
+    .grid-layout__inner {
+      @include pages-width();
+      display: flex;
+      justify-content: space-between;
+
+      & > * {
+        padding-left: $gutter-layout/2;
+        padding-right: $gutter-layout/2;
+      } 
+
+      & > *:first-child {
+        padding-left: 0;
+      }
+      & > *:last-child {
+        padding-right: 0;
+      }
+
+      & > .sidebar {
+        width: 300px+$gutter-layout/2;
+        min-width: 300px+$gutter-layout/2;
+        flex-shrink:0;
+      }
+      & > .main {
+        width: 100%;
+      }
+    }
+  }
+}
+

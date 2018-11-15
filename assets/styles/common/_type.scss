@@ -1,0 +1,37 @@
+body {
+  letter-spacing: -.01rem;
+	color: $font-color; 
+	font-weight: 300;
+  font-family: 'Montserrat Light', $font-stack-lucida-grande; 
+  font-size: 1rem;
+}
+
+pre,
+code {
+  font-family: $font-stack-consolas;
+}
+
+i,.i { font-style: italic; font-family: 'Montserrat Light',$font-stack-lucida-grande;}
+
+@mixin bold() {
+  font-weight: 700; font-family: 'Montserrat Bold',$font-stack-lucida-grande;
+}
+@mixin black() {
+  font-weight: 900; font-family: 'Montserrat Black',$font-stack-lucida-grande;
+}
+@mixin think() {
+  font-weight: 900; font-family: 'Montserrat Black',$font-stack-lucida-grande;
+}
+b, strong, .bold, .b {@include bold();}
+
+.think {@include think();}
+
+.caps { font-variant: small-caps; }
+
+.justify { text-align: justify; }
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

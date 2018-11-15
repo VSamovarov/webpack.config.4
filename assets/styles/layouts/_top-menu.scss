@@ -1,0 +1,155 @@
+.top-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem 0;
+  @include pages-padding();
+
+  width: 100%;
+  // max-height: 100vh;
+  // overflow:auto;
+  
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  background: $brand-color;
+
+  ul, li, a {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+  }
+  .menu-item {
+    &>a, &>span {
+      display: inline-block;
+      padding: .4em 1em;
+      position: relative;
+      color: $grey-deep;
+    }
+    margin: .9em 0;
+  }
+
+  .sub-menu {
+    display: none;
+    // border-top: 1px solid $grey-bright;
+    // border-bottom: 1px solid $grey-bright;
+    background: $grey-deep;
+    padding:.1em 0;
+    margin-bottom: 1em;
+    margin-top: .5em;
+    margin-left: -1em;
+    margin-right: -1em;
+
+    a, span {
+      color: #fff;
+    }
+    
+  }
+  
+  .menu-item-has-children {
+    &>a:after, &>span:after{
+      content: '+';
+      position: absolute;
+    }
+    &.currentMenuItem {
+      position: relative;
+      &>a, &>span {
+        &:after {
+          content: '—';
+        }
+      }
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+  
+}
+body.openMenu{
+  .top-menu {
+    display: block;
+  }
+} 
+//Большой экран
+@include breakpoint($big-display) {
+  .top-menu {
+    position: relative;
+    padding: 0 1rem;
+    display: block;
+    position: static;
+    text-align: right;
+    margin: 0;
+    background: none;
+    &>.menu-item, &>.menu-item a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      font-size: .9em;
+      white-space: nowrap;
+      line-height: 0;
+      position: relative;
+    }
+    &>.menu-item a {
+      padding: 1.9rem 0;
+      font-size: 1rem;
+      color: #000;
+      text-align: left;
+    }
+    &>.menu-item {
+      padding: 0 .9em;
+    }
+    &> .current-menu-item a, &> .menu-item > a:hover {
+      border-bottom: .2rem solid $grey-medium;
+      padding-bottom: 1.7rem;
+      color: #000;
+    }
+    &> .current-menu-item a {
+      border-bottom-color: #000;
+    }
+    .sub-menu {
+      display: none;
+      position: absolute;
+      background: $grey-deep;
+      margin: 0;
+      padding-bottom: 1.5rem;
+      margin-top: -.2rem;
+      z-index: 5;
+      .menu-item {
+        margin: 0;
+        a {
+          display: block;
+          padding: 1.5rem 1rem;
+          color: #fff;
+        }
+      }
+    }
+
+    .menu-item-has-children {
+      &>a:after, &>span:after{
+        font-family: 'fontello';
+        content: '\f105';
+        position: absolute;
+        right: -.8em;
+        transform: rotate(90deg);
+      }
+      &.currentMenuItem {
+        &>a, &>span {
+          &:after {
+            font-family: 'fontello';
+            content: '\f104';
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  .openSubMenu .top-menu .currentMenuItem .sub-menu {
+    display: block;
+  }
+}

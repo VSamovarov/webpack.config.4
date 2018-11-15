@@ -1,0 +1,10 @@
+/*
+Скрываем теги, футер и краткое содержание
+*/
+
+@mixin teaser_compact() {
+  .footer,.tags, .exept {display: none;}
+}
+.teaser.teaser_compact, .teaser_compact .teaser {
+  @include teaser_compact();
+}

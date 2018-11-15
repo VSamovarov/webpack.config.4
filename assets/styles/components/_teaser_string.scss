@@ -1,0 +1,17 @@
+/*
+  Тизер без картинки (новость)
+  Дата сверху
+*/
+@mixin  teaser_string() {
+  .thumbnail, .footer, .tags {display: none;}
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .meta {
+    margin-bottom: $baseline/4;
+  }
+}
+.teaser_string.teaser, .teaser_string .teaser {
+  @include teaser_string();
+}

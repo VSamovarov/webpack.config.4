@@ -1,0 +1,22 @@
+$alpha-value: .99;
+
+$white: #fff !default;
+
+$grey-white: rgba(#F5F5F5, $alpha-value);
+$grey-bright: rgba(#C4C4C4, $alpha-value);
+$grey-light: rgba(#939393, $alpha-value);
+$grey-medium: rgba(#626262, $alpha-value);
+$grey-deep: rgba(#313131, $alpha-value);
+$grey-dark: rgba(#000000, $alpha-value);
+
+$brand-color: #fff200;
+$contrast-color: #000000;
+
+
+$accent-color-1: #0d76ff;
+$accent-color-2: #ff002c; 
+$accent-color-3: #fff200;
+
+$success-color: $accent-color-1;
+$danger-color: $accent-color-2;
+$warning-color:$accent-color-2;

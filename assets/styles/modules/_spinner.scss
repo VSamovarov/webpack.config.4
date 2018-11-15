@@ -1,0 +1,32 @@
+/**
+ * Спинер, к любому блоку
+ * div.spinner
+ */
+$spinner-size: 3em;
+$spinner-color: rgb(255, 255, 255);
+@keyframes rotating {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+.spinner_ {
+  &:after {
+    content: '';
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+
+    border-radius: 50%;
+    width: $spinner-size;
+    height: $spinner-size;
+    border: 0.15* $spinner-size solid rgba($spinner-color, 0.1);
+    border-top: 0.15* $spinner-size solid rgba($spinner-color, 0.9);
+
+    top: 50%;
+    left: 50%;
+    margin-top: -$spinner-size;
+    margin-left: -$spinner-size;
+
+    animation: rotating 1.2s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+}

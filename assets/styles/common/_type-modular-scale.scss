@@ -1,0 +1,94 @@
+/** 
+ * Определяем размеры фонтов
+ * https://www.modularscale.com/
+ * https://www.bourbon.io/docs/latest/#modular-scale
+ * 
+*/
+$font-scale-small: $minor-third; //1.2
+$font-base-small: 16px;
+
+$font-scale-medium: $perfect-fourth; //1.333
+$font-base-medium: 17px;
+
+$font-scale-big: $augmented-fourth; //1.414;
+$font-base-big: 17px;
+
+/* Для Маленьких экранов*/
+html {
+  font-size: $font-base-small;
+}
+body {
+  $font-size: 1rem !default;
+  line-height: 1.45;
+  @include breakpoint($big-display) {
+    line-height: 1.618;
+  }
+  @include breakpoint($medium-display) {
+    line-height: 1.618;
+  }
+}
+h1, .h1, .s3 {
+  font-size: modular-scale(3, 1rem, $font-scale-small);
+  letter-spacing: -.02em;
+}
+h2, .h2, .s2 {
+  font-size: modular-scale(2, 1rem, $font-scale-small);
+}
+h3, .h3, .s1 {
+  font-size: modular-scale(1,  1rem,  $font-scale-small);
+}
+h4, .h4, .s0  {
+  font-size: modular-scale(0, 1rem, $font-scale-small);
+}
+h5, .h5, small, .small {
+  font-size: modular-scale(-1, 1rem, $font-scale-small);
+}
+
+h1, .h1 {
+  line-height: 1.2;
+}
+h2, .h2, 
+h3, .h3, 
+h4, .h4,
+h5, .h5 {
+  line-height: 1.3;
+}
+
+/* Для больших экранов*/
+@include breakpoint($big-display) {
+  html {
+    font-size: $font-base-big;
+  }
+  h1, .h1, .s3 {
+    font-size: modular-scale(3, 1rem, $font-scale-big);
+  }
+  h2, .h2, .s2 {
+    font-size: modular-scale(2, 1rem, $font-scale-big);
+  }
+  h3, .h3, .s1 {
+    font-size: modular-scale(1,  1rem,  $font-scale-big);
+  }
+  h4, .h4, .s0  {
+    font-size: modular-scale(0, 1rem, $font-scale-big);
+  }
+}
+/* Для средних экранов*/
+@include breakpoint($medium-display) {
+  html {
+    font-size: $font-base-medium;
+  }
+  h1, .h1, .s3 {
+    font-size: modular-scale(3, 1rem, $font-scale-medium);
+  }
+  h2, .h2, .s2 {
+    font-size: modular-scale(2, 1rem, $font-scale-medium);
+  }
+  h3, .h3, .s1 {
+    font-size: modular-scale(1,  1rem,  $font-scale-medium);
+  }
+  h4, .h4, .s0  {
+    font-size: modular-scale(0, 1rem, $font-scale-medium);
+  }
+
+
+}

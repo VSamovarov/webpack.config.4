@@ -1,0 +1,30 @@
+/*
+  Тизер без картинки (новость)
+  Дата слева
+*/
+
+@mixin teaser_string_line() {
+  margin-bottom: 1.2em;
+  .thumbnail, .footer, .tags {display: none;}
+  .content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  & * {
+    color: inherit;
+    font-size: inherit;
+    margin-bottom: 0;
+  }
+  .meta {
+    margin-right: .7em;
+  }
+  .date {
+    font-size: .9em;
+    white-space: nowrap;
+    //@include black();
+  }
+}
+.teaser_string_line.teaser, .teaser_string_line .teaser {
+  @include teaser_string_line();
+}
